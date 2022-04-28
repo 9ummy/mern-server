@@ -1,54 +1,23 @@
-const getResponse = () => {
-  return {
-    successResponse(res, msg) {
-      const data = {
-        status: 1,
-        message: msg,
-      };
-      return res.status(200).json(data);
-    },
-
-    successResponseWithData(res, msg, data) {
-      const resData = {
-        status: 1,
-        message: msg,
-        data: data,
-      };
-      return res.status(200).json(resData);
-    },
-
-    errorResponse(res, msg) {
-      const data = {
-        status: 0,
-        message: msg,
-      };
-      return res.status(500).json(data);
-    },
-
-    notFoundResponse(res, msg) {
-      const data = {
-        status: 0,
-        message: msg,
-      };
-      return res.status(404).json(data);
-    },
-
-    validationErrorWithData(res, msg, data) {
-      const resData = {
-        status: 0,
-        message: msg,
-        data: data,
-      };
-      return res.status(400).json(resData);
-    },
-
-    unauthorizedResponse(res, msg) {
-      const data = {
-        status: 0,
-        message: msg,
-      };
-      return res.status(401).json(data);
-    },
-  };
+export const successResponse = (res, msg) => {
+  return res.status(200).json({ statis: 1, message: msg });
 };
-export default getResponse;
+
+export const successResponseWithData = (res, msg, data) => {
+  return res.status(200).json({ status: 1, message: msg, data });
+};
+
+export const errorResponse = (res, msg) => {
+  return res.status(500).json({ status: 0, message: msg });
+};
+
+export const notFoundResponse = (res, msg) => {
+  return res.status(404).json({ status: 0, message: msg });
+};
+
+export const validationErrorWithData = (res, msg, data) => {
+  return res.status(400).json({ status: 0, message: msg, data });
+};
+
+export const unauthorizedResponse = (res, msg) => {
+  return res.status(401).json({ status: 0, message: msg });
+};
