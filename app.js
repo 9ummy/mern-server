@@ -8,6 +8,7 @@ import applyDotenv from './app/utils/applyDotenv.js';
 import applyPassport from './app/utils/applyPassport.js';
 import apiRouter from './app/routes/api.route.js';
 import userRouter from './app/routes/user.route.js';
+import gameRouter from './app/routes/game.route.js';
 
 async function startServer() {
   const app = express();
@@ -28,6 +29,7 @@ async function startServer() {
 
   app.use('/api', apiRouter);
   app.use('/user', userRouter);
+  app.use('/game', gameRouter);
 
   app.use(morgan('dev'));
   db.mongoose
