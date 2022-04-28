@@ -42,3 +42,14 @@ export const updateGame = async (req, res) => {
     return res.status(500).json({ message: e });
   }
 };
+
+export const deleteGame = async (req, res) => {
+  console.log('deleteGame called in GameService');
+  try {
+    Game.deleteOne({ id: req.params.id }).exec((_err, game) =>
+      res.status(200).send(game)
+    );
+  } catch (e) {
+    return res.status(500).json({ message: e });
+  }
+};

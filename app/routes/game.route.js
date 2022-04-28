@@ -12,5 +12,6 @@ gameRouter.use(cors());
 gameRouter.get('/all', cors(corsOptions), GameController.getGames);
 gameRouter.get('/:id', cors(corsOptions), GameController.getGame);
 gameRouter.put('/:id', cors(corsOptions), GameController.updateGame);
+gameRouter.delete('/:id', cors(corsOptions), GameController.deleteGame);
 
 export default gameRouter;
