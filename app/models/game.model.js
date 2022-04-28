@@ -1,5 +1,6 @@
 function GameModel(mongoose) {
   const gameSchema = mongoose.Schema({
+    id: Number,
     rank: Number,
     name: String,
     imageUrl: String,

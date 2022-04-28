@@ -10,5 +10,7 @@ const corsOptions = {
 const gameRouter = express.Router();
 gameRouter.use(cors());
 gameRouter.get('/all', cors(corsOptions), GameController.getGames);
+gameRouter.get('/:id', cors(corsOptions), GameController.getGame);
+gameRouter.put('/:id', cors(corsOptions), GameController.updateGame);
 
 export default gameRouter;
