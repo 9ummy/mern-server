@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import applyDotenv from '../lambdas/applyDotenv.js';
+import applyDotenv from '../utils/applyDotenv.js';
 
 function UserModel(mongoose) {
   const { jwtSecret } = applyDotenv(dotenv);
