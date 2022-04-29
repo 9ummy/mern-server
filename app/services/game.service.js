@@ -27,6 +27,16 @@ export const getGame = async (req, res) => {
   }
 };
 
+export const createGame = async (req, res) => {
+  try {
+    new Game(req.body).save();
+    console.log('Successfully created new game');
+    return res.status(201);
+  } catch (e) {
+    return res.status(500).json({ message: e });
+  }
+};
+
 export const updateGame = async (req, res) => {
   console.log('updateGame called in GameService');
   try {
